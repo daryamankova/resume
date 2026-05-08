@@ -110,11 +110,11 @@
     }
 
     .photo {
+      display: block;
       width: 100%;
       aspect-ratio: 0.78;
-      background-image: url("photo.jpg?v=5");
-      background-size: cover;
-      background-position: center top;
+      object-fit: cover;
+      object-position: center top;
       box-shadow: 0 24px 70px var(--shadow);
     }
 
@@ -398,7 +398,9 @@
     </header>
 
     <section class="hero" id="top">
-      <div class="portrait"><div class="photo" role="img" aria-label="Портрет Дарьи Маньковой"></div></div>
+      <div class="portrait">
+        <img class="photo" src="portrait.jpg?v=1" alt="Портрет Дарьи Маньковой" />
+      </div>
       <div>
         <h1>Дарья Манькова</h1>
         <p class="role">Бизнес-ассистент</p>
