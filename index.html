@@ -5,63 +5,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Дарья Манькова — бизнес-ассистент</title>
   <style>
-    :root { --bg: #103b36; --bg-deep: #0b2b28; --paper: #f5eee4; --paper-soft: rgba(245, 238, 228, 0.1); --paper-line: rgba(245, 238, 228, 0.22); --accent: #e7c8a8; --accent-strong: #f1d6b7; --text: #fffaf2; --muted: rgba(255, 250, 242, 0.72); --shadow: rgba(4, 18, 16, 0.28); }
+    :root { --bg: #103b36; --bg-deep: #0b2b28; --paper: #f5eee4; --paper-soft: rgba(245,238,228,.1); --paper-line: rgba(245,238,228,.22); --accent: #e7c8a8; --accent-strong: #f1d6b7; --text: #fffaf2; --muted: rgba(255,250,242,.72); --shadow: rgba(4,18,16,.28); }
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
-    body { margin: 0; color: var(--text); background: radial-gradient(circle at 82% 0%, rgba(231, 200, 168, 0.14), transparent 32rem), linear-gradient(145deg, var(--bg) 0%, var(--bg-deep) 100%); font-family: Inter, "Segoe UI", Arial, sans-serif; line-height: 1.6; }
+    body { margin: 0; color: var(--text); background: radial-gradient(circle at 82% 0%, rgba(231,200,168,.14), transparent 32rem), linear-gradient(145deg, var(--bg) 0%, var(--bg-deep) 100%); font-family: Inter, "Segoe UI", Arial, sans-serif; line-height: 1.6; }
     a { color: inherit; text-decoration: none; }
     .page { width: min(1120px, calc(100% - 40px)); margin: 0 auto; padding: 28px 0 64px; }
     .topbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-bottom: 24px; border-bottom: 1px solid var(--paper-line); }
-    .mark { display: inline-flex; align-items: center; min-height: 36px; color: var(--accent-strong); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
+    .mark { display: inline-flex; align-items: center; min-height: 36px; color: var(--accent-strong); font-size: 22px; font-weight: 700; text-transform: uppercase; letter-spacing: 0; }
     .nav { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; color: var(--muted); font-size: 14px; }
-    .nav a { padding: 8px 10px; border-bottom: 1px solid transparent; transition: color 0.2s ease, border-color 0.2s ease; }
+    .nav a { padding: 8px 10px; border-bottom: 1px solid transparent; transition: color .2s ease, border-color .2s ease; }
     .nav a:hover { color: var(--text); border-color: var(--accent); }
-    .hero { display: grid; grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr); gap: 54px; align-items: center; min-height: calc(100vh - 100px); padding: 54px 0 60px; }
+    .hero { display: grid; grid-template-columns: minmax(260px,.78fr) minmax(0,1.22fr); gap: 54px; align-items: center; min-height: calc(100vh - 100px); padding: 54px 0 60px; }
     .portrait { position: relative; max-width: 380px; }
     .portrait::after { content: ""; position: absolute; inset: 22px -22px -22px 22px; border: 1px solid var(--paper-line); z-index: -1; }
-    .portrait img { display: block; width: 100%; aspect-ratio: 0.78; object-fit: cover; box-shadow: 0 24px 70px var(--shadow); }
-    .eyebrow { margin: 0 0 18px; color: var(--accent); font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
-    h1, h2, h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: 0; }
-    h1 { max-width: 760px; font-size: clamp(44px, 7vw, 86px); line-height: 0.98; color: var(--paper); }
-    .role { margin: 22px 0 0; color: var(--text); font-size: clamp(22px, 3vw, 34px); line-height: 1.25; }
+    .portrait img { display: block; width: 100%; aspect-ratio: .78; object-fit: cover; box-shadow: 0 24px 70px var(--shadow); }
+    h1,h2,h3 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-weight: 400; letter-spacing: 0; }
+    h1 { max-width: 760px; font-size: clamp(44px,7vw,86px); line-height: .98; color: var(--paper); }
+    .role { margin: 22px 0 0; color: var(--text); font-size: clamp(22px,3vw,34px); line-height: 1.25; }
     .intro { max-width: 720px; margin: 26px 0 0; color: var(--muted); font-size: 18px; }
     .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 34px; }
-    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border: 1px solid var(--accent); color: var(--bg-deep); background: var(--accent); font-weight: 700; transition: transform 0.2s ease, background 0.2s ease; }
+    .button { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 18px; border: 1px solid var(--accent); color: var(--bg-deep); background: var(--accent); font-weight: 700; transition: transform .2s ease, background .2s ease; }
     .button:hover { transform: translateY(-2px); background: var(--accent-strong); }
     .button.secondary { color: var(--text); background: transparent; }
     .button.secondary:hover { background: var(--paper-soft); }
     .section { padding: 54px 0; border-top: 1px solid var(--paper-line); }
-    .section-head { display: grid; grid-template-columns: minmax(180px, 0.34fr) minmax(0, 1fr); gap: 36px; align-items: start; margin-bottom: 30px; }
-    h2 { color: var(--paper); font-size: clamp(30px, 4vw, 48px); line-height: 1.1; }
+    .section-head { display: grid; grid-template-columns: minmax(180px,.34fr) minmax(0,1fr); gap: 36px; align-items: start; margin-bottom: 30px; }
+    h2 { color: var(--paper); font-size: clamp(30px,4vw,48px); line-height: 1.1; }
     .section-note { margin: 0; color: var(--muted); font-size: 17px; }
     .experience-list { display: grid; gap: 28px; }
-    .job { display: grid; grid-template-columns: minmax(210px, 0.38fr) minmax(0, 1fr); gap: 30px; padding: 30px; background: var(--paper-soft); border: 1px solid var(--paper-line); box-shadow: 0 18px 48px rgba(4, 18, 16, 0.12); }
+    .job { display: grid; grid-template-columns: minmax(210px,.38fr) minmax(0,1fr); gap: 30px; padding: 30px; background: var(--paper-soft); border: 1px solid var(--paper-line); box-shadow: 0 18px 48px rgba(4,18,16,.12); }
     .job h3 { color: var(--accent-strong); font-size: 26px; line-height: 1.2; }
     .dates { margin: 10px 0 0; color: var(--accent); font-size: 16px; font-weight: 700; }
     .job-title { margin: 0 0 12px; font-weight: 800; }
     .company-note { margin: 0 0 18px; color: var(--muted); }
     .job ul { margin: 0; padding-left: 20px; }
     .job li { margin: 8px 0; padding-left: 6px; }
-    .education-grid, .skills-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px; }
-    .education-card, .skill-card { padding: 26px; background: rgba(245, 238, 228, 0.08); border: 1px solid var(--paper-line); }
+    .education-grid,.skills-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 22px; }
+    .education-card,.skill-card { padding: 26px; background: rgba(245,238,228,.08); border: 1px solid var(--paper-line); }
     .education-card .dates { margin: 0 0 14px; }
-    .education-card h3, .skill-card h3 { color: var(--paper); font-size: 21px; line-height: 1.35; }
-    .education-card p, .skill-card p { margin: 12px 0 0; color: var(--muted); }
-    .skills-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .education-card h3,.skill-card h3 { color: var(--paper); font-size: 21px; line-height: 1.35; }
+    .education-card p,.skill-card p { margin: 12px 0 0; color: var(--muted); }
+    .skills-grid { grid-template-columns: repeat(3,minmax(0,1fr)); }
     .footer { display: flex; justify-content: space-between; gap: 18px; padding-top: 32px; border-top: 1px solid var(--paper-line); color: var(--muted); font-size: 14px; }
-    @media (max-width: 860px) { .page { width: min(100% - 28px, 1120px); padding-top: 20px; } .nav { justify-content: flex-start; } .hero, .section-head, .job, .education-grid, .skills-grid { grid-template-columns: 1fr; } .hero { gap: 34px; min-height: auto; padding: 38px 0 48px; } .portrait { width: min(330px, 100%); } .portrait::after { inset: 16px -14px -16px 14px; } .section { padding: 42px 0; } .job, .education-card, .skill-card { padding: 22px; } }
-    @media (max-width: 520px) { .nav a { padding-left: 0; } h1 { font-size: 44px; } .role { font-size: 22px; } .intro, .section-note { font-size: 16px; } .button { width: 100%; } .job h3 { font-size: 23px; } .footer { flex-direction: column; } }
+    @media (max-width: 860px) { .page { width: min(100% - 28px,1120px); padding-top: 20px; } .nav { justify-content: flex-start; } .hero,.section-head,.job,.education-grid,.skills-grid { grid-template-columns: 1fr; } .hero { gap: 34px; min-height: auto; padding: 38px 0 48px; } .portrait { width: min(330px,100%); } .portrait::after { inset: 16px -14px -16px 14px; } .section { padding: 42px 0; } .job,.education-card,.skill-card { padding: 22px; } }
+    @media (max-width: 520px) { .nav a { padding-left: 0; } h1 { font-size: 44px; } .role { font-size: 22px; } .intro,.section-note { font-size: 16px; } .button { width: 100%; } .job h3 { font-size: 23px; } .footer { flex-direction: column; } }
   </style>
 </head>
 <body>
   <main class="page">
     <header class="topbar" aria-label="Навигация"><a class="mark" href="#top" aria-label="В начало">Резюме</a><nav class="nav" aria-label="Разделы резюме"><a href="#experience">Опыт</a><a href="#education">Образование</a><a href="#skills">Навыки</a></nav></header>
-    <section class="hero" id="top"><div class="portrait"><img id="resume-photo" src="" alt="Портрет Дарьи Маньковой" /></div><div><p class="eyebrow">Резюме</p><h1>Дарья Манькова</h1><p class="role">Бизнес-ассистент</p><p class="intro">Помогаю руководителям и командам держать в порядке коммуникации, встречи, документы, CRM, подрядчиков и операционные процессы. Работала с инвестиционно-девелоперскими проектами, недвижимостью и управленческими задачами.</p><div class="hero-actions"><a class="button" href="#experience">Смотреть опыт</a><a class="button secondary" href="#skills">Навыки и ИИ-инструменты</a></div></div></section>
+    <section class="hero" id="top"><div class="portrait"><img id="resume-photo" src="" alt="Портрет Дарьи Маньковой" /></div><div><h1>Дарья Манькова</h1><p class="role">Бизнес-ассистент</p><p class="intro">Помогаю руководителям и командам держать в порядке коммуникации, встречи, документы, CRM, подрядчиков и операционные процессы. Работала с инвестиционно-девелоперскими проектами, недвижимостью и управленческими задачами.</p><div class="hero-actions"><a class="button" href="#experience">Смотреть опыт</a><a class="button secondary" href="#skills">Навыки и ИИ-инструменты</a></div></div></section>
     <section class="section" id="experience" aria-labelledby="experience-title"><div class="section-head"><h2 id="experience-title">Опыт</h2><p class="section-note">Практический опыт в бизнес-ассистировании, операционном сопровождении, коммуникациях с партнерами и подготовке материалов для управленческих решений.</p></div><div class="experience-list"><article class="job"><div><h3>L.L.C. TFF Global Investment</h3><p class="dates">май 2025 - декабрь 2025</p></div><div><p class="job-title">Бизнес-ассистент: Business Developer / Operating Manager</p><p class="company-note">Инвестиционно-девелоперская компания, ОАЭ</p><ul><li>Деловая коммуникация на русском и английском языке с международными партнерами, фондами, девелоперами и консультантами.</li><li>Организация встреч с инвесторами и партнерами, подготовка материалов, сопровождение коммуникации.</li><li>Поиск и первичный скрининг потенциальных партнеров и фондов в GCC, Европе и Азии.</li><li>Аналитика и поиск дополнительной информации: оценка off-market проектов в hospitality, development, private equity.</li><li>Подготовка презентаций, инвестиционных обзоров и внутренних отчетов.</li><li>Ведение CRM проектов, базы контактов, обновление статусов сделок, контроль внутренних процессов.</li><li>Помощь в ИИ-визации бизнеса: создание сайтов с помощью вайбкодинга и GPTs-агентов под операционные задачи компании.</li></ul></div></article><article class="job"><div><h3>ООО «Торговая компания Фирма Меркурий»</h3><p class="dates">июнь 2024 - апрель 2025</p></div><div><p class="job-title">Бизнес-ассистент заместителя генерального директора</p><p class="company-note">Производство воды Пилигрим</p><ul><li>Организация онлайн-совещаний, постановка задач по итогам, контроль сроков и исполнения.</li><li>Управление деловым календарем руководителя, организация встреч, запись на приемы.</li><li>Поиск и отбор подрядчиков, организация встреч, коммуникация до завершения проектов.</li><li>Организация travel-поддержки: бронирование отелей и билетов.</li><li>Работа в программах Google и Microsoft Office.</li></ul></div></article><article class="job"><div><h3>ООО «Оптилэнд»</h3><p class="dates">июнь 2023 - июнь 2024</p></div><div><p class="job-title">Помощник юриста / руководителя</p><p class="company-note">Строительная компания и продажа недвижимости</p><ul><li>Подготовка и проверка юридической документации: договоры, акты, доверенности.</li><li>Коммуникация с государственными структурами и организациями: Росреестр, прокуратура, МФЦ и др.</li><li>Коммуникация с клиентами компании и сопровождение сделок.</li><li>Выполнение личных и рабочих поручений руководителя.</li><li>Ведение базы данных и их учет.</li><li>Создание финансовых заявок и контроль оплат.</li><li>Подготовка таблиц в Excel и презентаций в PowerPoint.</li></ul></div></article></div></section>
     <section class="section" id="education" aria-labelledby="education-title"><div class="section-head"><h2 id="education-title">Образование</h2><p class="section-note">Психология семейных отношений и юридическая база помогают работать с людьми, документами и сложными деловыми процессами.</p></div><div class="education-grid"><article class="education-card"><p class="dates">2022-2024</p><h3>Московский институт психоанализа</h3><p>Факультет семейной психологии</p><p>Направление: психология семейных отношений</p><p><strong>Степень:</strong> магистр</p></article><article class="education-card"><p class="dates">2018-2022</p><h3>Московский государственный юридический университет им. О. Е. Кутафина (МГЮА)</h3><p>Факультет бизнес-права</p><p>Направление: юриспруденция</p><p><strong>Степень:</strong> бакалавр</p></article></div></section>
     <section class="section" id="skills" aria-labelledby="skills-title"><div class="section-head"><h2 id="skills-title">Навыки и знания</h2><p class="section-note">Фокус на операционной поддержке, контенте, дизайне, ИИ-инструментах и коммуникации на английском языке.</p></div><div class="skills-grid"><article class="skill-card"><h3>Английский язык</h3><p>Уровень B2: рабочая коммуникация с международными партнерами и консультантами.</p></article><article class="skill-card"><h3>Контент</h3><p>Написание статей и создание контента для социальных сетей.</p></article><article class="skill-card"><h3>Дизайн</h3><p>Графический дизайн и генерация изображений для презентаций, сайтов и социальных сетей.</p></article><article class="skill-card"><h3>Вайбкодинг</h3><p>Создание сайтов и приложений с помощью ИИ-инструментов.</p></article><article class="skill-card"><h3>ИИ-технологии</h3><p>Профессиональный промпт-инжиниринг и глубокая работа с ChatGPT, Gemini, Claude, Perplexity, Midjourney, Gamma и другими сервисами.</p></article></div></section>
     <footer class="footer"><span>Дарья Манькова</span><span>Одностраничное резюме</span></footer>
   </main>
-  <script>fetch("photo.txt").then((response) => response.text()).then((data) => { document.getElementById("resume-photo").src = "data:image/jpeg;base64," + data.trim(); });</script>
+  <script>fetch("photo.txt?v=202605081724").then((response) => response.text()).then((data) => { document.getElementById("resume-photo").src = "data:image/jpeg;base64," + data.trim(); });</script>
 </body>
 </html>
