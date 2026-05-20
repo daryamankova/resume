@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Дарья Манькова — бизнес-ассистент</title>
+  <title>Дарья Манькова — Executive Assistant to CEO</title>
   <style>
     :root {
       --bg: #103b36;
@@ -56,6 +56,13 @@
       border-bottom: 1px solid var(--paper-line);
     }
 
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 18px;
+    }
+
     .mark {
       display: inline-flex;
       align-items: center;
@@ -87,6 +94,32 @@
       border-color: var(--accent);
     }
 
+    .language-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px;
+      border: 1px solid var(--paper-line);
+    }
+
+    .language-button {
+      min-width: 38px;
+      min-height: 30px;
+      padding: 5px 9px;
+      border: 0;
+      color: var(--muted);
+      background: transparent;
+      font: inherit;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .language-button.is-active {
+      color: var(--bg-deep);
+      background: var(--accent);
+    }
+
     .hero {
       display: grid;
       grid-template-columns: minmax(260px, 0.78fr) minmax(0, 1.22fr);
@@ -114,15 +147,6 @@
       width: 100%;
       height: auto;
       box-shadow: 0 24px 70px var(--shadow);
-    }
-
-    .eyebrow {
-      margin: 0 0 18px;
-      color: var(--accent);
-      font-size: 14px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
     }
 
     h1,
@@ -252,14 +276,12 @@
       color: var(--muted);
     }
 
-    .job ul,
-    .skills ul {
+    .job ul {
       margin: 0;
       padding-left: 20px;
     }
 
-    .job li,
-    .skills li {
+    .job li {
       margin: 8px 0;
       padding-left: 6px;
     }
@@ -317,6 +339,16 @@
 
       .nav {
         justify-content: flex-start;
+      }
+
+      .topbar,
+      .topbar-actions {
+        align-items: flex-start;
+      }
+
+      .topbar-actions {
+        flex-direction: column-reverse;
+        gap: 12px;
       }
 
       .hero,
@@ -387,36 +419,42 @@
 <body>
   <main class="page">
     <header class="topbar" aria-label="Навигация">
-      <a class="mark" href="#top" aria-label="В начало">Резюме</a>
-      <nav class="nav" aria-label="Разделы резюме">
-        <a href="#experience">Опыт</a>
-        <a href="#education">Образование</a>
-        <a href="#skills">Навыки</a>
-      </nav>
+      <a class="mark" href="#top" aria-label="В начало" data-i18n="brand">Резюме</a>
+      <div class="topbar-actions">
+        <nav class="nav" aria-label="Разделы резюме">
+          <a href="#experience" data-i18n="navExperience">Опыт</a>
+          <a href="#education" data-i18n="navEducation">Образование</a>
+          <a href="#skills" data-i18n="navSkills">Навыки</a>
+        </nav>
+        <div class="language-switcher" aria-label="Выбор языка">
+          <button class="language-button is-active" type="button" data-language="ru">RU</button>
+          <button class="language-button" type="button" data-language="en">EN</button>
+        </div>
+      </div>
     </header>
 
     <section class="hero" id="top">
       <div class="portrait">
-        <img class="photo" src="IMG_9656-2.jpg?v=1" alt="Портрет Дарьи Маньковой" />
+        <img class="photo" src="IMG_9656-2.jpg?v=1" alt="Портрет Дарьи Маньковой" data-i18n-attr="alt:photoAlt" />
       </div>
       <div>
-        <h1>Дарья Манькова</h1>
-        <p class="role">Бизнес-ассистент</p>
-        <p class="intro">
-          Помогаю руководителям и командам держать в порядке коммуникации, встречи, документы, CRM, подрядчиков и операционные процессы. Работала с инвестиционно-девелоперскими проектами, недвижимостью и управленческими задачами.
+        <h1 data-i18n="name">Дарья Манькова</h1>
+        <p class="role" data-i18n="role">Executive Assistant to CEO</p>
+        <p class="intro" data-i18n="intro">
+          Executive Assistant to CEO с опытом сопровождения руководителей, операционной координации, международной коммуникации, подготовки материалов, CRM и AI-driven workflow optimization. Работала в динамичной среде инвестиционно-девелоперских, производственных и real estate проектов.
         </p>
         <div class="hero-actions">
-          <a class="button" href="#experience">Смотреть опыт</a>
-          <a class="button secondary" href="#skills">Навыки и ИИ-инструменты</a>
+          <a class="button" href="#experience" data-i18n="primaryCta">Смотреть опыт</a>
+          <a class="button secondary" href="#skills" data-i18n="secondaryCta">Ключевые компетенции</a>
         </div>
       </div>
     </section>
 
     <section class="section" id="experience" aria-labelledby="experience-title">
       <div class="section-head">
-        <h2 id="experience-title">Опыт</h2>
-        <p class="section-note">
-          Практический опыт в бизнес-ассистировании, операционном сопровождении, коммуникациях с партнерами и подготовке материалов для управленческих решений.
+        <h2 id="experience-title" data-i18n="experienceTitle">Опыт</h2>
+        <p class="section-note" data-i18n="experienceNote">
+          Карьерная линия выстроена вокруг executive support: календарь CEO, деловая коммуникация, встречи, документы, CRM, research, подрядчики и контроль операционных процессов.
         </p>
       </div>
 
@@ -424,19 +462,18 @@
         <article class="job">
           <div>
             <h3>L.L.C. TFF Global Investment</h3>
-            <p class="dates">май 2025 - декабрь 2025</p>
+            <p class="dates" data-i18n="tffDates">2025 - настоящее время</p>
           </div>
           <div>
-            <p class="job-title">Бизнес-ассистент: Business Developer / Operating Manager</p>
-            <p class="company-note">Инвестиционно-девелоперская компания, ОАЭ</p>
+            <p class="job-title" data-i18n="tffTitle">Executive Assistant to CEO</p>
+            <p class="company-note" data-i18n="tffNote">Инвестиционно-девелоперская компания, ОАЭ</p>
             <ul>
-              <li>Деловая коммуникация на русском и английском языке с международными партнерами, фондами, девелоперами и консультантами.</li>
-              <li>Организация встреч с инвесторами и партнерами, подготовка материалов, сопровождение коммуникации.</li>
-              <li>Поиск и первичный скрининг потенциальных партнеров и фондов в GCC, Европе и Азии.</li>
-              <li>Аналитика и поиск дополнительной информации: оценка off-market проектов в hospitality, development, private equity.</li>
-              <li>Подготовка презентаций, инвестиционных обзоров и внутренних отчетов.</li>
-              <li>Ведение CRM проектов, базы контактов, обновление статусов сделок, контроль внутренних процессов.</li>
-              <li>Помощь в ИИ-визации бизнеса: создание сайтов с помощью вайбкодинга и GPTs-агентов под операционные задачи компании.</li>
+              <li data-i18n="tff1">Вела деловую коммуникацию на русском и английском языке с международными партнерами, фондами, девелоперами и консультантами.</li>
+              <li data-i18n="tff2">Организовывала встречи CEO с инвесторами и партнерами: координация расписания, подготовка материалов, follow-up и контроль договоренностей.</li>
+              <li data-i18n="tff3">Проводила research и первичный скрининг потенциальных партнеров и фондов в GCC, Европе и Азии.</li>
+              <li data-i18n="tff4">Готовила инвестиционные обзоры, презентации и внутренние материалы по off-market проектам в hospitality, development и private equity.</li>
+              <li data-i18n="tff5">Систематизировала CRM и базу контактов, повысив прозрачность статусов сделок, коммуникаций и внутренних процессов.</li>
+              <li data-i18n="tff6">Внедряла AI-инструменты для оптимизации рабочих процессов: research, подготовка материалов, GPT-ассистенты и внутренние AI-решения для операционных задач.</li>
             </ul>
           </div>
         </article>
@@ -444,17 +481,17 @@
         <article class="job">
           <div>
             <h3>ООО «Торговая компания Фирма Меркурий»</h3>
-            <p class="dates">июнь 2024 - апрель 2025</p>
+            <p class="dates" data-i18n="mercuryDates">2024 - 2025</p>
           </div>
           <div>
-            <p class="job-title">Бизнес-ассистент заместителя генерального директора</p>
-            <p class="company-note">Производство воды Пилигрим</p>
+            <p class="job-title" data-i18n="mercuryTitle">Executive Assistant to Deputy CEO</p>
+            <p class="company-note" data-i18n="mercuryNote">Производство воды «Пилигрим»</p>
             <ul>
-              <li>Организация онлайн-совещаний, постановка задач по итогам, контроль сроков и исполнения.</li>
-              <li>Управление деловым календарем руководителя, организация встреч, запись на приемы.</li>
-              <li>Поиск и отбор подрядчиков, организация встреч, коммуникация до завершения проектов.</li>
-              <li>Организация travel-поддержки: бронирование отелей и билетов.</li>
-              <li>Работа в программах Google и Microsoft Office.</li>
+              <li data-i18n="mercury1">Управляла деловым календарем руководителя, организовывала встречи, онлайн-совещания и записи на приемы.</li>
+              <li data-i18n="mercury2">Фиксировала задачи по итогам встреч, контролировала сроки и помогала держать фокус на приоритетах руководителя.</li>
+              <li data-i18n="mercury3">Координировала подрядчиков: поиск, первичный отбор, организация встреч, коммуникация и контроль выполнения работ.</li>
+              <li data-i18n="mercury4">Организовывала travel support: билеты, отели, логистика и сопутствующие детали поездок.</li>
+              <li data-i18n="mercury5">Вела рабочие материалы, таблицы и документы в Google Workspace и Microsoft Office.</li>
             </ul>
           </div>
         </article>
@@ -462,19 +499,17 @@
         <article class="job">
           <div>
             <h3>ООО «Оптилэнд»</h3>
-            <p class="dates">июнь 2023 - июнь 2024</p>
+            <p class="dates" data-i18n="optilandDates">2023 - 2024</p>
           </div>
           <div>
-            <p class="job-title">Помощник юриста / руководителя</p>
-            <p class="company-note">Строительная компания и продажа недвижимости</p>
+            <p class="job-title" data-i18n="optilandTitle">Executive Assistant</p>
+            <p class="company-note" data-i18n="optilandNote">Строительная компания и продажа недвижимости</p>
             <ul>
-              <li>Подготовка и проверка юридической документации: договоры, акты, доверенности.</li>
-              <li>Коммуникация с государственными структурами и организациями: Росреестр, прокуратура, МФЦ и др.</li>
-              <li>Коммуникация с клиентами компании и сопровождение сделок.</li>
-              <li>Выполнение личных и рабочих поручений руководителя.</li>
-              <li>Ведение базы данных и их учет.</li>
-              <li>Создание финансовых заявок и контроль оплат.</li>
-              <li>Подготовка таблиц в Excel и презентаций в PowerPoint.</li>
+              <li data-i18n="optiland1">Сопровождала руководителя в операционных, административных и документальных задачах.</li>
+              <li data-i18n="optiland2">Готовила и проверяла документы: договоры, акты, доверенности и сопроводительные материалы.</li>
+              <li data-i18n="optiland3">Коммуницировала с клиентами, государственными структурами и организациями: Росреестр, прокуратура, МФЦ и др.</li>
+              <li data-i18n="optiland4">Вела базы данных, финансовые заявки, учет оплат и контроль статусов по сделкам.</li>
+              <li data-i18n="optiland5">Готовила таблицы, презентации и рабочие материалы для руководителя.</li>
             </ul>
           </div>
         </article>
@@ -483,63 +518,234 @@
 
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="section-head">
-        <h2 id="education-title">Образование</h2>
-        <p class="section-note">Психология семейных отношений и юридическая база помогают работать с людьми, документами и сложными деловыми процессами.</p>
+        <h2 id="education-title" data-i18n="educationTitle">Образование</h2>
+        <p class="section-note" data-i18n="educationNote">Психология семейных отношений и юридическая база помогают работать с людьми, документами, переговорами и сложными деловыми процессами.</p>
       </div>
 
       <div class="education-grid">
         <article class="education-card">
           <p class="dates">2022-2024</p>
-          <h3>Московский институт психоанализа</h3>
-          <p>Факультет семейной психологии</p>
-          <p>Направление: психология семейных отношений</p>
-          <p><strong>Степень:</strong> магистр</p>
+          <h3 data-i18n="mastersSchool">Московский институт психоанализа</h3>
+          <p data-i18n="mastersFaculty">Факультет семейной психологии</p>
+          <p data-i18n="mastersProgram">Направление: психология семейных отношений</p>
+          <p><strong data-i18n="degreeLabel">Степень:</strong> <span data-i18n="mastersDegree">магистр</span></p>
         </article>
 
         <article class="education-card">
           <p class="dates">2018-2022</p>
-          <h3>Московский государственный юридический университет им. О. Е. Кутафина (МГЮА)</h3>
-          <p>Факультет бизнес-права</p>
-          <p>Направление: юриспруденция</p>
-          <p><strong>Степень:</strong> бакалавр</p>
+          <h3 data-i18n="bachelorsSchool">Московский государственный юридический университет им. О. Е. Кутафина (МГЮА)</h3>
+          <p data-i18n="bachelorsFaculty">Факультет бизнес-права</p>
+          <p data-i18n="bachelorsProgram">Направление: юриспруденция</p>
+          <p><strong data-i18n="degreeLabel2">Степень:</strong> <span data-i18n="bachelorsDegree">бакалавр</span></p>
         </article>
       </div>
     </section>
 
     <section class="section" id="skills" aria-labelledby="skills-title">
       <div class="section-head">
-        <h2 id="skills-title">Навыки и знания</h2>
-        <p class="section-note">Фокус на операционной поддержке, контенте, дизайне, ИИ-инструментах и коммуникации на английском языке.</p>
+        <h2 id="skills-title" data-i18n="skillsTitle">Ключевые компетенции</h2>
+        <p class="section-note" data-i18n="skillsNote">Сокращенный HR-friendly блок навыков под Executive Assistant to CEO: executive support, operations, коммуникация и AI workflow optimization.</p>
       </div>
 
       <div class="skills-grid">
         <article class="skill-card">
-          <h3>Английский язык</h3>
-          <p>Уровень B2: рабочая коммуникация с международными партнерами и консультантами.</p>
+          <h3 data-i18n="skillEnglishTitle">Английский язык</h3>
+          <p data-i18n="skillEnglishText">Upper-Intermediate (B2+): рабочая коммуникация с международными партнерами, фондами и консультантами.</p>
         </article>
         <article class="skill-card">
-          <h3>Контент</h3>
-          <p>Написание статей и создание контента для социальных сетей.</p>
+          <h3 data-i18n="skillSupportTitle">Executive Support</h3>
+          <p data-i18n="skillSupportText">Календарь руководителя, встречи, follow-up, travel support, документы и контроль приоритетов.</p>
         </article>
         <article class="skill-card">
-          <h3>Дизайн</h3>
-          <p>Графический дизайн и генерация изображений для презентаций, сайтов и социальных сетей.</p>
+          <h3 data-i18n="skillOpsTitle">Operations Coordination</h3>
+          <p data-i18n="skillOpsText">Координация подрядчиков, внутренних процессов, CRM, баз контактов и статусов задач.</p>
         </article>
         <article class="skill-card">
-          <h3>Вайбкодинг</h3>
-          <p>Создание сайтов и приложений с помощью ИИ-инструментов.</p>
+          <h3 data-i18n="skillResearchTitle">Research & Materials</h3>
+          <p data-i18n="skillResearchText">Подготовка презентаций, аналитических обзоров, таблиц и материалов для управленческих решений.</p>
         </article>
         <article class="skill-card">
-          <h3>ИИ-технологии</h3>
-          <p>Профессиональный промпт-инжиниринг и глубокая работа с ChatGPT, Gemini, Claude, Perplexity, Midjourney, Gamma и другими сервисами.</p>
+          <h3 data-i18n="skillAiTitle">AI & Automation</h3>
+          <p data-i18n="skillAiText">ChatGPT, Claude, Gemini, AI-assisted research, GPT-ассистенты и оптимизация рабочих процессов.</p>
         </article>
       </div>
     </section>
 
     <footer class="footer">
-      <span>Дарья Манькова</span>
-      <span>Одностраничное резюме</span>
+      <span data-i18n="footerName">Дарья Манькова</span>
+      <span data-i18n="footerNote">Executive Assistant to CEO</span>
     </footer>
   </main>
+  <script>
+    const translations = {
+      ru: {
+        brand: "Резюме",
+        navExperience: "Опыт",
+        navEducation: "Образование",
+        navSkills: "Навыки",
+        photoAlt: "Портрет Дарьи Маньковой",
+        name: "Дарья Манькова",
+        role: "Executive Assistant to CEO",
+        intro: "Executive Assistant to CEO с опытом сопровождения руководителей, операционной координации, международной коммуникации, подготовки материалов, CRM и AI-driven workflow optimization. Работала в динамичной среде инвестиционно-девелоперских, производственных и real estate проектов.",
+        primaryCta: "Смотреть опыт",
+        secondaryCta: "Ключевые компетенции",
+        experienceTitle: "Опыт",
+        experienceNote: "Карьерная линия выстроена вокруг executive support: календарь CEO, деловая коммуникация, встречи, документы, CRM, research, подрядчики и контроль операционных процессов.",
+        tffDates: "2025 - настоящее время",
+        tffTitle: "Executive Assistant to CEO",
+        tffNote: "Инвестиционно-девелоперская компания, ОАЭ",
+        tff1: "Вела деловую коммуникацию на русском и английском языке с международными партнерами, фондами, девелоперами и консультантами.",
+        tff2: "Организовывала встречи CEO с инвесторами и партнерами: координация расписания, подготовка материалов, follow-up и контроль договоренностей.",
+        tff3: "Проводила research и первичный скрининг потенциальных партнеров и фондов в GCC, Европе и Азии.",
+        tff4: "Готовила инвестиционные обзоры, презентации и внутренние материалы по off-market проектам в hospitality, development и private equity.",
+        tff5: "Систематизировала CRM и базу контактов, повысив прозрачность статусов сделок, коммуникаций и внутренних процессов.",
+        tff6: "Внедряла AI-инструменты для оптимизации рабочих процессов: research, подготовка материалов, GPT-ассистенты и внутренние AI-решения для операционных задач.",
+        mercuryDates: "2024 - 2025",
+        mercuryTitle: "Executive Assistant to Deputy CEO",
+        mercuryNote: "Производство воды «Пилигрим»",
+        mercury1: "Управляла деловым календарем руководителя, организовывала встречи, онлайн-совещания и записи на приемы.",
+        mercury2: "Фиксировала задачи по итогам встреч, контролировала сроки и помогала держать фокус на приоритетах руководителя.",
+        mercury3: "Координировала подрядчиков: поиск, первичный отбор, организация встреч, коммуникация и контроль выполнения работ.",
+        mercury4: "Организовывала travel support: билеты, отели, логистика и сопутствующие детали поездок.",
+        mercury5: "Вела рабочие материалы, таблицы и документы в Google Workspace и Microsoft Office.",
+        optilandDates: "2023 - 2024",
+        optilandTitle: "Executive Assistant",
+        optilandNote: "Строительная компания и продажа недвижимости",
+        optiland1: "Сопровождала руководителя в операционных, административных и документальных задачах.",
+        optiland2: "Готовила и проверяла документы: договоры, акты, доверенности и сопроводительные материалы.",
+        optiland3: "Коммуницировала с клиентами, государственными структурами и организациями: Росреестр, прокуратура, МФЦ и др.",
+        optiland4: "Вела базы данных, финансовые заявки, учет оплат и контроль статусов по сделкам.",
+        optiland5: "Готовила таблицы, презентации и рабочие материалы для руководителя.",
+        educationTitle: "Образование",
+        educationNote: "Психология семейных отношений и юридическая база помогают работать с людьми, документами, переговорами и сложными деловыми процессами.",
+        mastersSchool: "Московский институт психоанализа",
+        mastersFaculty: "Факультет семейной психологии",
+        mastersProgram: "Направление: психология семейных отношений",
+        degreeLabel: "Степень:",
+        mastersDegree: "магистр",
+        bachelorsSchool: "Московский государственный юридический университет им. О. Е. Кутафина (МГЮА)",
+        bachelorsFaculty: "Факультет бизнес-права",
+        bachelorsProgram: "Направление: юриспруденция",
+        degreeLabel2: "Степень:",
+        bachelorsDegree: "бакалавр",
+        skillsTitle: "Ключевые компетенции",
+        skillsNote: "Сокращенный HR-friendly блок навыков под Executive Assistant to CEO: executive support, operations, коммуникация и AI workflow optimization.",
+        skillEnglishTitle: "Английский язык",
+        skillEnglishText: "Upper-Intermediate (B2+): рабочая коммуникация с международными партнерами, фондами и консультантами.",
+        skillSupportTitle: "Executive Support",
+        skillSupportText: "Календарь руководителя, встречи, follow-up, travel support, документы и контроль приоритетов.",
+        skillOpsTitle: "Operations Coordination",
+        skillOpsText: "Координация подрядчиков, внутренних процессов, CRM, баз контактов и статусов задач.",
+        skillResearchTitle: "Research & Materials",
+        skillResearchText: "Подготовка презентаций, аналитических обзоров, таблиц и материалов для управленческих решений.",
+        skillAiTitle: "AI & Automation",
+        skillAiText: "ChatGPT, Claude, Gemini, AI-assisted research, GPT-ассистенты и оптимизация рабочих процессов.",
+        footerName: "Дарья Манькова",
+        footerNote: "Executive Assistant to CEO",
+        pageTitle: "Дарья Манькова — Executive Assistant to CEO"
+      },
+      en: {
+        brand: "Resume",
+        navExperience: "Experience",
+        navEducation: "Education",
+        navSkills: "Skills",
+        photoAlt: "Portrait of Darya Mankova",
+        name: "Darya Mankova",
+        role: "Executive Assistant to CEO",
+        intro: "Executive Assistant to CEO with experience in executive support, operations coordination, international communication, business materials, CRM systems, and AI-driven workflow optimization. Experienced in fast-paced investment development, manufacturing, and real estate environments.",
+        primaryCta: "View Experience",
+        secondaryCta: "Core Competencies",
+        experienceTitle: "Experience",
+        experienceNote: "Career track focused on executive support: CEO calendar management, business communication, meetings, documents, CRM, research, contractors, and operational process control.",
+        tffDates: "2025 - Present",
+        tffTitle: "Executive Assistant to CEO",
+        tffNote: "Investment and development company, UAE",
+        tff1: "Managed business communication in Russian and English with international partners, funds, developers, and consultants.",
+        tff2: "Organized CEO meetings with investors and partners: schedule coordination, preparation of materials, follow-up, and tracking of agreements.",
+        tff3: "Conducted research and initial screening of potential partners and funds across the GCC, Europe, and Asia.",
+        tff4: "Prepared investment overviews, presentations, and internal materials for off-market projects in hospitality, development, and private equity.",
+        tff5: "Structured CRM and the company contact database, improving visibility of deal statuses, communications, and internal processes.",
+        tff6: "Implemented AI tools for workflow optimization: research, material preparation, GPT assistants, and internal AI solutions for operational tasks.",
+        mercuryDates: "2024 - 2025",
+        mercuryTitle: "Executive Assistant to Deputy CEO",
+        mercuryNote: "Pilgrim water production company",
+        mercury1: "Managed the executive calendar, meetings, online calls, appointments, and day-to-day scheduling.",
+        mercury2: "Captured action items after meetings, tracked deadlines, and helped keep executive priorities under control.",
+        mercury3: "Coordinated contractors: search, initial selection, meeting setup, communication, and completion tracking.",
+        mercury4: "Organized travel support: tickets, hotels, logistics, and related trip details.",
+        mercury5: "Maintained working materials, spreadsheets, and documents in Google Workspace and Microsoft Office.",
+        optilandDates: "2023 - 2024",
+        optilandTitle: "Executive Assistant",
+        optilandNote: "Construction and real estate company",
+        optiland1: "Supported the executive across operational, administrative, and documentation tasks.",
+        optiland2: "Prepared and reviewed documents: contracts, acts, powers of attorney, and supporting materials.",
+        optiland3: "Communicated with clients, government bodies, and public institutions, including Rosreestr, prosecutor's office, and MFC.",
+        optiland4: "Maintained databases, financial requests, payment records, and deal status tracking.",
+        optiland5: "Prepared spreadsheets, presentations, and working materials for the executive.",
+        educationTitle: "Education",
+        educationNote: "Background in family psychology and law supports work with people, documents, negotiations, and complex business processes.",
+        mastersSchool: "Moscow Institute of Psychoanalysis",
+        mastersFaculty: "Faculty of Family Psychology",
+        mastersProgram: "Program: Psychology of Family Relations",
+        degreeLabel: "Degree:",
+        mastersDegree: "Master's",
+        bachelorsSchool: "Kutafin Moscow State Law University",
+        bachelorsFaculty: "Faculty of Business Law",
+        bachelorsProgram: "Program: Law",
+        degreeLabel2: "Degree:",
+        bachelorsDegree: "Bachelor's",
+        skillsTitle: "Core Competencies",
+        skillsNote: "Focused HR-friendly skill set for Executive Assistant to CEO roles: executive support, operations, communication, and AI workflow optimization.",
+        skillEnglishTitle: "English",
+        skillEnglishText: "Upper-Intermediate (B2+): business communication with international partners, funds, and consultants.",
+        skillSupportTitle: "Executive Support",
+        skillSupportText: "Executive calendar, meetings, follow-up, travel support, documents, and priority tracking.",
+        skillOpsTitle: "Operations Coordination",
+        skillOpsText: "Coordination of contractors, internal processes, CRM, contact databases, and task statuses.",
+        skillResearchTitle: "Research & Materials",
+        skillResearchText: "Presentations, analytical overviews, spreadsheets, and materials for management decisions.",
+        skillAiTitle: "AI & Automation",
+        skillAiText: "ChatGPT, Claude, Gemini, AI-assisted research, GPT assistants, and workflow optimization.",
+        footerName: "Darya Mankova",
+        footerNote: "Executive Assistant to CEO",
+        pageTitle: "Darya Mankova — Executive Assistant to CEO"
+      }
+    };
+
+    const setLanguage = (language) => {
+      const dictionary = translations[language];
+
+      document.documentElement.lang = language;
+      document.title = dictionary.pageTitle;
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.dataset.i18n;
+        if (dictionary[key]) {
+          element.textContent = dictionary[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-attr]").forEach((element) => {
+        element.dataset.i18nAttr.split(",").forEach((pair) => {
+          const [attribute, key] = pair.split(":");
+          if (attribute && dictionary[key]) {
+            element.setAttribute(attribute, dictionary[key]);
+          }
+        });
+      });
+
+      document.querySelectorAll("[data-language]").forEach((button) => {
+        button.classList.toggle("is-active", button.dataset.language === language);
+      });
+
+      localStorage.setItem("resume-language", language);
+    };
+
+    document.querySelectorAll("[data-language]").forEach((button) => {
+      button.addEventListener("click", () => setLanguage(button.dataset.language));
+    });
+
+    setLanguage(localStorage.getItem("resume-language") || "ru");
+  </script>
 </body>
 </html>
