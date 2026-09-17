@@ -363,6 +363,29 @@
       grid-template-columns: repeat(3, minmax(0, 1fr));
     }
 
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 48px;
+      padding: 10px 16px;
+      border: 1px solid var(--paper-line);
+      color: var(--text);
+      overflow-wrap: anywhere;
+      transition: border-color 0.2s ease, background 0.2s ease;
+    }
+
+    .contact-links a:hover,
+    .contact-links a:focus-visible {
+      border-color: var(--accent);
+      background: var(--paper-soft);
+    }
+
     .footer {
       display: flex;
       justify-content: space-between;
@@ -470,6 +493,7 @@
           <a href="#results" data-i18n="navResults">Результаты</a>
           <a href="#education" data-i18n="navEducation">Образование</a>
           <a href="#skills" data-i18n="navSkills">Навыки</a>
+          <a href="#contacts" data-i18n="navContacts">Контакты</a>
         </nav>
         <div class="language-switcher" aria-label="Выбор языка">
           <button class="language-button is-active" type="button" data-language="ru">RU</button>
@@ -651,6 +675,18 @@
       </div>
     </section>
 
+    <section class="section" id="contacts" aria-labelledby="contacts-title">
+      <div class="section-head">
+        <h2 id="contacts-title" data-i18n="contactsTitle">Контакты</h2>
+        <p class="section-note" data-i18n="contactsNote">Открыта к обсуждению сотрудничества и новых возможностей.</p>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:daryamankovaa@gmail.com" aria-label="Email: daryamankovaa@gmail.com">daryamankovaa@gmail.com</a>
+        <a href="tel:+79299007555" aria-label="Телефон: +7 929 900 75 55" data-i18n-attr="aria-label:phoneAria">+7 929 900 75 55</a>
+        <a href="https://t.me/darya_mankova" target="_blank" rel="noopener noreferrer" aria-label="Telegram: @darya_mankova">TG: @darya_mankova</a>
+      </div>
+    </section>
+
     <footer class="footer">
       <span data-i18n="footerName">Дарья Манькова</span>
       <span data-i18n="footerNote">Бизнес-ассистент</span>
@@ -659,6 +695,10 @@
   <script>
     const translations = {
       ru: {
+        navContacts: "Контакты",
+        contactsTitle: "Контакты",
+        contactsNote: "Открыта к обсуждению сотрудничества и новых возможностей.",
+        phoneAria: "Телефон: +7 929 900 75 55",
         navResults: "Результаты",
         resultsTitle: "Ключевые результаты",
         resultsNote: "Конкретные результаты в операционной поддержке руководителей, инвестиционной работе и автоматизации.",
@@ -744,6 +784,10 @@
         pageTitle: "Дарья Манькова — Бизнес-ассистент"
       },
       en: {
+        navContacts: "Contact",
+        contactsTitle: "Contact",
+        contactsNote: "Open to discussing collaboration and new opportunities.",
+        phoneAria: "Phone: +7 929 900 75 55",
         navResults: "Results",
         resultsTitle: "Key Results",
         resultsNote: "Measurable outcomes in executive support, investment operations, and automation.",
