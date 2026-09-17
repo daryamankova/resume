@@ -304,6 +304,7 @@
       padding-left: 6px;
     }
 
+    .results-grid,
     .education-grid,
     .skills-grid {
       display: grid;
@@ -316,6 +317,29 @@
       padding: 26px;
       background: rgba(245, 238, 228, 0.08);
       border: 1px solid var(--paper-line);
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .result-card {
+      padding: 26px;
+      background: rgba(245, 238, 228, 0.08);
+      border: 1px solid var(--paper-line);
+    }
+
+    .result-card h3 {
+      color: var(--accent-strong);
+      font-size: 22px;
+      line-height: 1.3;
+    }
+
+    .result-card p {
+      margin: 12px 0 0;
+      color: var(--muted);
     }
 
     .education-card .dates {
@@ -372,6 +396,7 @@
       .hero,
       .section-head,
       .job,
+      .results-grid,
       .education-grid,
       .skills-grid {
         grid-template-columns: 1fr;
@@ -396,6 +421,7 @@
       }
 
       .job,
+      .result-card,
       .education-card,
       .skill-card {
         padding: 22px;
@@ -441,6 +467,7 @@
       <div class="topbar-actions">
         <nav class="nav" aria-label="Разделы резюме">
           <a href="#experience" data-i18n="navExperience">Опыт</a>
+          <a href="#results" data-i18n="navResults">Результаты</a>
           <a href="#education" data-i18n="navEducation">Образование</a>
           <a href="#skills" data-i18n="navSkills">Навыки</a>
         </nav>
@@ -536,6 +563,39 @@
       </div>
     </section>
 
+    <section class="section" id="results" aria-labelledby="results-title">
+      <div class="section-head">
+        <h2 id="results-title" data-i18n="resultsTitle">Ключевые результаты</h2>
+        <p class="section-note" data-i18n="resultsNote">Конкретные результаты в операционной поддержке руководителей, инвестиционной работе и автоматизации.</p>
+      </div>
+      <div class="results-grid">
+        <article class="result-card">
+          <h3 data-i18n="result1Title">Освободила время руководителя</h3>
+          <p data-i18n="result1Text">Взяла на себя календарь, встречи, подрядчиков и контроль поручений. По предварительной оценке, участие руководителя в операционных задачах сократилось с 10 до 3 часов в неделю — примерно на 70%, высвободив до 7 часов для переговоров и развития бизнеса.</p>
+        </article>
+        <article class="result-card">
+          <h3 data-i18n="result2Title">Создала интерактивный дашборд</h3>
+          <p data-i18n="result2Text">Объединила отчётность отделов и ключевые показатели в одном интерфейсе. Руководитель мог быстро оценивать статус работы вместо просмотра отдельных отчётов, экономя несколько часов в неделю.</p>
+        </article>
+        <article class="result-card">
+          <h3 data-i18n="result3Title">Систематизировала CRM</h3>
+          <p data-i18n="result3Text">Организовала работу с 1 000 контактов и 30 проектами, отслеживание статусов и следующих шагов. Это помогло довести до переговоров 5 инвестиционных возможностей с совокупным потенциальным объёмом свыше $500 млн.</p>
+        </article>
+        <article class="result-card">
+          <h3 data-i18n="result4Title">Внедрила ИИ-анализ проектов и инвесторов</h3>
+          <p data-i18n="result4Text">Настроила анализ базы и сопоставление инвестиционных интересов с характеристиками проектов. Это помогло выйти на 3 переговорные встречи по сделкам с потенциальным совокупным объёмом $30 млн.</p>
+        </article>
+        <article class="result-card">
+          <h3 data-i18n="result5Title">Создала ИИ-агента для инвестиционных one-pager</h3>
+          <p data-i18n="result5Text">Сократила подготовку one-pager с нескольких часов до примерно 5 минут и снизила потребность в срочной работе дизайнера. Руководитель мог самостоятельно подготовить документ из имеющихся материалов прямо перед переговорами, в любое время.</p>
+        </article>
+        <article class="result-card">
+          <h3 data-i18n="result6Title">Улучшила контроль поручений</h3>
+          <p data-i18n="result6Text">Фиксировала решения совещаний, ответственных и сроки. За полгода доля поручений, выполненных вовремя, выросла на 20%.</p>
+        </article>
+      </div>
+    </section>
+
     <section class="section" id="education" aria-labelledby="education-title">
       <div class="section-head">
         <h2 id="education-title" data-i18n="educationTitle">Образование</h2>
@@ -599,6 +659,21 @@
   <script>
     const translations = {
       ru: {
+        navResults: "Результаты",
+        resultsTitle: "Ключевые результаты",
+        resultsNote: "Конкретные результаты в операционной поддержке руководителей, инвестиционной работе и автоматизации.",
+        result1Title: "Освободила время руководителя",
+        result1Text: "Взяла на себя календарь, встречи, подрядчиков и контроль поручений. По предварительной оценке, участие руководителя в операционных задачах сократилось с 10 до 3 часов в неделю — примерно на 70%, высвободив до 7 часов для переговоров и развития бизнеса.",
+        result2Title: "Создала интерактивный дашборд",
+        result2Text: "Объединила отчётность отделов и ключевые показатели в одном интерфейсе. Руководитель мог быстро оценивать статус работы вместо просмотра отдельных отчётов, экономя несколько часов в неделю.",
+        result3Title: "Систематизировала CRM",
+        result3Text: "Организовала работу с 1 000 контактов и 30 проектами, отслеживание статусов и следующих шагов. Это помогло довести до переговоров 5 инвестиционных возможностей с совокупным потенциальным объёмом свыше $500 млн.",
+        result4Title: "Внедрила ИИ-анализ проектов и инвесторов",
+        result4Text: "Настроила анализ базы и сопоставление инвестиционных интересов с характеристиками проектов. Это помогло выйти на 3 переговорные встречи по сделкам с потенциальным совокупным объёмом $30 млн.",
+        result5Title: "Создала ИИ-агента для инвестиционных one-pager",
+        result5Text: "Сократила подготовку one-pager с нескольких часов до примерно 5 минут и снизила потребность в срочной работе дизайнера. Руководитель мог самостоятельно подготовить документ из имеющихся материалов прямо перед переговорами, в любое время.",
+        result6Title: "Улучшила контроль поручений",
+        result6Text: "Фиксировала решения совещаний, ответственных и сроки. За полгода доля поручений, выполненных вовремя, выросла на 20%.",
         brand: "Резюме",
         navExperience: "Опыт",
         navEducation: "Образование",
@@ -669,6 +744,21 @@
         pageTitle: "Дарья Манькова — Бизнес-ассистент"
       },
       en: {
+        navResults: "Results",
+        resultsTitle: "Key Results",
+        resultsNote: "Measurable outcomes in executive support, investment operations, and automation.",
+        result1Title: "Freed up executive time",
+        result1Text: "Took over calendar management, meetings, contractor coordination, and task follow-up. Based on a preliminary estimate, the executive's time spent on these operational tasks fell from 10 to 3 hours per week — about 70% — freeing up to 7 hours for negotiations and business development.",
+        result2Title: "Built an interactive reporting dashboard",
+        result2Text: "Consolidated departmental reports and key metrics in one interface. The executive could review progress without going through separate reports, saving several hours a week.",
+        result3Title: "Structured the CRM",
+        result3Text: "Organized 1,000 contacts and 30 projects, with clear statuses and next steps. This helped bring 5 investment opportunities with a combined potential value of over $500 million to the negotiation stage.",
+        result4Title: "Introduced AI analysis of projects and investors",
+        result4Text: "Set up database analysis to match investor interests with project characteristics. This helped initiate 3 negotiation meetings concerning opportunities with a combined potential value of $30 million.",
+        result5Title: "Built an AI agent for investment one-pagers",
+        result5Text: "Reduced one-pager preparation from several hours to approximately 5 minutes and reduced reliance on urgent design support. The executive could prepare a document from existing materials independently, even immediately before negotiations or outside business hours.",
+        result6Title: "Improved task follow-up",
+        result6Text: "Documented meeting decisions, owners, and deadlines. The share of tasks completed on time increased by 20% over six months.",
         brand: "Resume",
         navExperience: "Experience",
         navEducation: "Education",
